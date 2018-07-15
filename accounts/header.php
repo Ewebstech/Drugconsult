@@ -18,7 +18,6 @@ else{
 
 
 ?>
-
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />

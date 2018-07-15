@@ -1,8 +1,9 @@
-<?php ob_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta http-equiv="refresh" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
@@ -13,7 +14,9 @@
 
 	<?php include("header.html"); ?>
 
-    <?php include("sidebar.php"); ?>
+		<?php include("sidebar.php"); 
+					require 'dbcounts.php';
+		?>
       
       <!--main content start-->
       <section id="main-content">
@@ -28,35 +31,29 @@
 					</ol>
 				</div>
 			</div>
-              <?php $my = mysql_query("select * from members"); 
-				$value = mysql_num_rows($my); 
-			  ?>
+             
 			  
             <div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box blue-bg">
 						<i class="fa fa-user"></i>
-						<div class="count"><?php echo $value; ?></div>
+						<div class="count"><?php echo $number_of_members; ?></div>
 						<div class="title">Registered Members</div>						
 					</div><!--/.info-box-->			
 				</div><!--/.col-->
-				<?php $myy = mysql_query("select * from items where status='confirmed'"); 
-				$value1 = mysql_num_rows($myy); 
-			  ?>
+				
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box brown-bg">
 						<i class="fa fa-play-circle-o"></i>
-						<div class="count"><?php echo ($value1) ?"$value1" : "0"; ?></div>
+						<div class="count"><?php // echo ($value1) ?"$value1" : "0"; ?></div>
 						<div class="title">Confirmed Products</div>						
 					</div><!--/.info-box-->			
 				</div><!--/.col-->	
-				<?php $myyy = mysql_query("select * from invoice where status='unconfirmed'"); 
-				$value2 = mysql_num_rows($myyy); 
-			  ?>
+			
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box green-bg">
 						<i class="fa fa-shopping-cart"></i>
-						<div class="count"><?php echo ($value2) ?"$value2" : "0"; ?></div>
+						<div class="count"><?php // echo ($value2) ?"$value2" : "0"; ?></div>
 						<div class="title">Unconfirmed Orders</div>						
 					</div><!--/.info-box-->			
 				</div><!--/.col-->	

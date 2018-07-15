@@ -1,4 +1,4 @@
-<?php ob_start();
+<?php
 if(!isset($_SESSION))
  session_start();
 error_reporting(0); ?>
@@ -92,11 +92,12 @@ if(isset($_POST['login']))
 	$name = strtolower($_POST['username']);
 	$pass = strtolower($_POST['password']);
 	
-	include("../database.php");
+	include("../temp/database.php");
 	$query = "SELECT * FROM `staffs` WHERE username = '$name'";
-	$result = mysql_query($query) or die ("error in validation");
+
+	$result = $db_conn->query($query) or die ("error in validation");
 		
-	while($row = mysql_fetch_array($result))
+	while($row = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			if($row['username'] == $name)
 			{ 
@@ -106,7 +107,7 @@ if(isset($_POST['login']))
 					else
 					{	
 						$query = "UPDATE staffs SET loginstatus='online' WHERE username = '$name'";
-						$do = mysql_query($query);
+						$do = $db_conn->query($query);
 						$_SESSION["username"] = $name;
 						header("location:index.php");
 						exit;
@@ -120,9 +121,9 @@ if(isset($_POST['login']))
 if(isset($_REQUEST["cid"]) && $_REQUEST["cid"] == 1212)
 {
 	$name=$_SESSION["username"];
-	include("../database.php");
+	include("../temp/database.php");
 	$query = "UPDATE staffs SET loginstatus='offline' WHERE username = '$name'";
-	$do = mysql_query($query);
+	$do = $db_conn->query($query);
 	session_destroy();
 	header("location: login.php");
 }
