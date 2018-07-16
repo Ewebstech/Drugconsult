@@ -3,6 +3,7 @@ namespace App\Classes;
 
 require_once __DIR__ . '/SignupProcess.php';
 require_once __DIR__ . '/LoginProcess.php';
+require_once __DIR__ . '/SendMail.php';
 
 use PDO;
 
@@ -169,5 +170,8 @@ class Baseclass{
         endif;
     }
 
+    public function baseUrl($resource){
+        return "http://192.168.173.1:2000/".$resource;
+    }
 
 }

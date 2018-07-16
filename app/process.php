@@ -1,6 +1,6 @@
 <?php
 require_once('Baseclass.php');
-
+ob_start();
 
 use \App\Classes\SignupProcess as Signup;
 use \App\Classes\Baseclass;
@@ -28,7 +28,11 @@ if(isset($_POST["signup"])){
         $table = 'members';
         $signupuser = $SignUp->signup($params, $table);
 
-        echo $signupuser['success'];
+        if($signupuser == true):
+            header("location: ../auth/confirm.php");
+        else:
+            header("location: ../auth/failedsignup.php");
+        endif;
     endif;
 }
 

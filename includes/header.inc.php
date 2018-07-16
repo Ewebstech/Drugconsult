@@ -651,13 +651,13 @@
                           <ul class="list-unstyled">
 
                             <li>
-                              <a href="account/login.html">
+                              <a href="auth/conduit.php">
                                 <i class="fa fa-lock"></i>
                                 Log in
                               </a>
                             </li>
                             <li>
-                              <a href="account/register.html" title="Create account">
+                              <a href="auth/conduit.php" title="Create account">
                                 <i class="fa fa-user"></i>
                                 Create account
                               </a>
