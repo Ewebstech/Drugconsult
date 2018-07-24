@@ -9,7 +9,7 @@
               </a>
             </span>
             <p>
-              <a href="collections/frontpage.html" title="New Products">new products</a>
+              <a href="" title="New Products"></a>
             </p>
             <p>
               <a href="collections/on-sale.html" title="on sale">specials</a>
