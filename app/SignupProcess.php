@@ -29,7 +29,7 @@ class SignupProcess extends Baseclass{
             $reciever = $params['email'];
             
             $name = $params['name'];
-            $confirm_link = $this->base->baseUrl("process.php?mail_confirmation&email=$reciever&name=$name");
+            $confirm_link = $this->base->baseUrl("app/process.php?mail_confirmation&email=$reciever&name=$name");
 
             $subject = 'Hello '.$name.', Please Confirm Your Email Address to Get Started';
             $content = "<p>Hello ".$name.", kindly click on the link below to confirm your email address and get access to your set-up account.</p>
@@ -50,17 +50,6 @@ class SignupProcess extends Baseclass{
 
     } 
 
-    public function update(){
-        // $update_params = [
-        //     'name' => 'Emmanuel',
-        //     'mobile' => '08133918455'
-        // ];
-        // $where = [
-        //     'email' => 'ewebstech@ymail.com',
-        //     'userid' => '5b4a95068c5ef'
-        // ];
-
-        // $update_table = $this->base->update_db($update_params, $table, $where);
-    }
+    
 
 }

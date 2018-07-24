@@ -7,11 +7,14 @@ use \App\Classes\Baseclass;
 use \App\Classes\LoginProcess as Login;
 
 $SignUp = new Signup();
+$base = new Baseclass();
+$Login = new Login();
+
 
 if(isset($_POST["signup"])){
    if(isset($_SESSION["dontregisterusername"]) or isset($_SESSION["dontregisterpassword"])):
         
-        Baseclass::redirectback('Bad Method');
+    $base->redirectback('Bad Method');
 
    else:
         $params = [
@@ -20,7 +23,7 @@ if(isset($_POST["signup"])){
             'email' => $_POST['email'],
             'mobile' => $_POST['mobile'],
             'location' => $_POST['location'],
-            'password' => Baseclass::Hash($_POST['password']),
+            'password' => $base->Hash($_POST['password']),
             'status' => 'nonverified',
             'time'     => time(),
             'PRIMARY' => "email"
@@ -42,10 +45,59 @@ if(isset($_POST["login"])){
         'password' => $_POST['password']
     ];
 
-    $Login = new Login();
+    
     $get_login_status = $Login->login($params);
 
     if($get_login_status['success']){
         header("location: ../accounts/index.php");
     }
+}
+
+if(isset($_REQUEST['mail_confirmation'])){
+
+    //Check Get args with DB
+    $param = htmlentities($_REQUEST['email']);
+    $name = htmlentities($_REQUEST['name']);
+    $checkemail = $base->validate_email($param);
+
+    echo"You will be redirected in <b> 3 Seconds</b> \n";
+
+    if($checkemail == false){
+        $base->redirectback();
+    }
+    else{
+       
+        // confirm user and redirect to dashboard
+        $table = 'members';
+
+        $update_params = [
+            'status' => 'verified'
+        ];
+        $where = [
+            'email'  => $param,
+            'name'  => $name
+        ];
+        
+        $update_status = $base->update_db($update_params, $table, $where);
+
+        if($update_status == true):
+            // Send to dashboard
+            sleep("3");
+            $params = [
+                'email' => $param,
+                'password' => $_POST['password']
+            ];
+        
+            
+            $get_login_status = $Login->login($params);
+        
+            if($get_login_status['success']){
+                header("location: ../accounts/index.php");
+            }
+
+            //header("location: ../accounts/index.php");
+        endif;
+        
+    }
+
 }

@@ -122,7 +122,7 @@ class Baseclass{
      * @param [type] $where [unique key to perform udpdate]
      * @return void
      */
-    protected function update_db(Array $params, $table, $where)
+    public function update_db(Array $params, $table, $where)
     {
         //Get all column names
         foreach($params as $column => $value){
@@ -138,7 +138,8 @@ class Baseclass{
         //unset($params['PRIMARY']);
        
         $data = array_merge($params,$where);
-       
+        //var_dump($data);
+       // die;
         try{
             $sql = "UPDATE $table SET $column_string WHERE $where_string";
             $stmt = $this->db_conn->prepare($sql);									 
@@ -171,7 +172,25 @@ class Baseclass{
     }
 
     public function baseUrl($resource){
-        return "http://192.168.173.1:2000/".$resource;
+        return "http://".$_SERVER['HTTP_HOST']."/".$resource;
     }
+
+    public function validate_email($param){
+        $pdo = $this->db_conn;
+        $email = htmlentities($param);
+
+        $stmt = $pdo->prepare("SELECT email FROM `members` where email = :email ");
+        $stmt->execute(['email' => $email]);
+        $result = $stmt->fetch();
+
+        if($result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
 
 }
