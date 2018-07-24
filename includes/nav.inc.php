@@ -12,16 +12,16 @@
               <a href="" title="New Products"></a>
             </p>
             <p>
-              <a href="collections/on-sale.html" title="on sale">specials</a>
+              <a href="collections/on-sale.html">Brands</a>
             </p>
             <p>
-              <a href="collections/bestseller.html" title="BestSeller">bestseller</a>
+              <a href="collections/bestseller.html">Health</a>
             </p>
             <p>
-              <a href="pages/about-us.html" title="About Us">about us</a>
+              <a href="pages/about-us.html">About</a>
             </p>
             <p>
-              <a href="blogs/news.html" title="News">blog</a>
+              <a href="blogs/news.html" >Contact</a>
             </p>
           </div>
         </div>
