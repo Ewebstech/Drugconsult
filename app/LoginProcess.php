@@ -31,6 +31,7 @@ class LoginProcess extends Baseclass{
             $result = $stmt->fetch();
 
             if($result){
+                $_SESSION['username'] = $email;
                 $output['success'] = "Login Successful";
             }
            

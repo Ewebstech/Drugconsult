@@ -12,7 +12,7 @@
 
     <title>VM Admin Panel</title>
 
-	<?php include("header.html"); ?>
+	<?php include("header.php"); ?>
 
 		<?php include("sidebar.php"); 
 					require 'dbcounts.php';

@@ -1,3 +1,15 @@
+<?php  
+  require_once('app/Baseclass.php');
+
+
+  use App\Classes\QueryClass;
+  use App\Classes\Baseclass;
+
+  $queryclass = new QueryClass();
+  $baseclass = new Baseclass();
+
+  ?>
+
 <link rel="shortcut icon" href="cdn.shopify.com/s/files/1/0012/3024/1844/t/11/assets/favicon020a.png?16680006302654876230"
     type="image/png" />
   <!-- Social meta ================================================== -->

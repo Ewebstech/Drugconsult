@@ -1,4 +1,4 @@
-<?php
+<?php ob_start();
 if(!isset($_SESSION))
  session_start();
 error_reporting(0); ?>
@@ -85,7 +85,7 @@ error_reporting(0); ?>
     </div>
 
 <?php
-
+require_once('../app/Baseclass.php');
 
 if(isset($_POST['login']))
 { 

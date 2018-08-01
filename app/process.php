@@ -1,6 +1,6 @@
 <?php
 require_once('Baseclass.php');
-ob_start();
+
 
 use \App\Classes\SignupProcess as Signup;
 use \App\Classes\Baseclass;
@@ -51,6 +51,19 @@ if(isset($_POST["login"])){
     if($get_login_status['success']){
         header("location: ../accounts/index.php");
     }
+    else{
+        header("location: ../auth/conduit.php?error=failedlogin");
+    }
+}
+
+if(isset($_REQUEST["logout"])){
+
+    if(isset($_SESSION['username'])){
+        unset($_SESSION['username']);
+        session_destroy();
+    }
+    header("location: ../auth/conduit.php?loggedout");
+    
 }
 
 if(isset($_REQUEST['mail_confirmation'])){
@@ -93,6 +106,9 @@ if(isset($_REQUEST['mail_confirmation'])){
         
             if($get_login_status['success']){
                 header("location: ../accounts/index.php");
+            }
+            else{
+                header("location: ../auth/conduit.php");
             }
 
             //header("location: ../accounts/index.php");

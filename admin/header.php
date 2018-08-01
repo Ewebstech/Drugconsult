@@ -1,7 +1,12 @@
-<?php if(!isset($_SESSION)) session_start(); ob_start();
+<?php ob_start();
+require_once('../app/Baseclass.php'); 
+use App\Classes\Baseclass;
+
+
+if(!isset($_SESSION)) session_start();
 //error_reporting(0);
 require_once "../temp/database.php";
-date_default_timezone_set('Africa/lagos');
+
 if(isset($_SESSION["username"]))
 {
 	$username = $_SESSION["username"];
@@ -10,11 +15,15 @@ if(isset($_SESSION["username"]))
 	if(!$result){echo "error in validation";}
 	$row = $result->fetch(PDO::FETCH_ASSOC);
 	
-	if($row["status"] == "admin")
-	 $ask = "no";
+    if($row["status"] == "admin"):
+        // Import Class
+        $baseclass = new Baseclass();
+
+    endif;
+
 }
 else{
-	header("location: login.php?cid=1212");
+	header("location:./login.php?cid=1ww212");
 	}
 ?>
     

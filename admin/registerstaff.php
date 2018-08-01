@@ -10,7 +10,7 @@
 
     <title>Register Staffs</title>
 
-	<?php include("header.html"); ?>
+	<?php include("header.php"); ?>
 
     <?php include("sidebar.php"); ?>
 
@@ -64,11 +64,11 @@
 				 <div class="form-group">
 				<label>Role</label>
 				<select name="status" class="form-control">
-				<?php $do = mysql_query("select * from staffs where status='admin'"); 
-				if(!$available = mysql_fetch_assoc($do)) { ?>
+				<?php if($row['status'] == 'admin') { ?>
 				<option value="admin">Admin</option>
 				<?php } ?>
 				<option value="staff">Staff</option>
+				<option value="manager">Staff</option>
 				</select>
 				</div>
 				<div class="form-group">
@@ -82,55 +82,33 @@ if(isset($_POST['regstaff'])){
 	  //save data to database
 		
 		//create table
+		$current_date = date('d-m-Y,h:i: a');
 
-		$sql= "	Create Table if not exists `staffs` (
-				id VARCHAR (20) NOT NULL,
-				name VARCHAR( 30),
-				username VARCHAR(30),
-				password VARCHAR(20),
-				phone VARCHAR (20),
-				email VARCHAR (50),
-				lastaccess timestamp,
-				status VARCHAR (20),
-				date VARCHAR (20),
-				loginstatus VARCHAR (20),
-				PRIMARY KEY ( username )
-				)";
-		// Execute query
-		if (!mysql_query($sql,$conn)) {
-					echo "Error creating table: " . mysql_error($conn);
-		}
-		else
-		{
-		// escaping variables for security
-			date_default_timezone_set('GMT');
-			$id = time();
-			$staffname = mysql_real_escape_string($_POST['name']);
-			$date = date('h:i a M-D-Y');
-			$username = mysql_real_escape_string($_POST['username']);
-			$email = mysql_real_escape_string($_POST['email']);
-			$phone = mysql_real_escape_string($_POST['phone']);
-			$password = mysql_real_escape_string($_POST['password']);
-			$status = mysql_real_escape_string($_POST['status']);
-			
-			if(! $conn )
-			{
-			  die('Could not connect:' . mysql_error());
-			}
-			if($staffname!="" and $username!="" and $email!="" and $phone!="" and $status!="" and $password!="" and strlen($password)>=6){
-		    	
-			$sql = "INSERT INTO `staffs` (id, name, username, password, phone, email, lastaccess, status, date, loginstatus) values ( '$id', '$staffname', '$username', '$password', '$phone', '$email', ' ', '$status', '$date',' ')";
+		$params = [
+            'id' => time(),
+            'name' => ucwords(strtolower($_POST['name'])),
+			'username' => $_POST['username'],
+			'password' => $_POST['password'],
+			'phone' => $_POST['phone'],
+			'email' => $_POST['email'],
+            'lastaccess' => $current_date,
+            'status' => $_POST['status'],
+            'date' => $current_date,
+            'loginstatus' => 'online',
+            'PRIMARY' => "username"
+        ];
+        $table = 'staffs';
+		$insert = $baseclass->insert($params, $table);
 		
-			$retval = mysql_query($sql);
-			if(! $retval )
+		if($insert['error'])
 			{
-			  die("<span class='btn btn-danger'><b>$username is already registered!</b>");
-			}else{echo"<span class='btn btn-success'><b>$staffname has been registered successfully <br /> Username: $username <br /> Password: $password.</b>";}
+			  die("<span class='btn btn-danger'><b>$insert[error] is already registered!</b>");
+			}
+			else{echo"<span class='btn btn-success'><b>$_POST[name] has been registered successfully <br /> Username: $_POST[username] <br /> Password: $_POST[password].</b>";}
 			
-		}else{ echo"<span class='btn btn-danger'><b>Some fields were not filled in appropraitely</b>";}
-  }
-  
-  }
+		}
+		
+ 
 ?>
 
 		  

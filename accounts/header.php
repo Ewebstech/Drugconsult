@@ -2,18 +2,18 @@
 ob_start();
 if(!isset($_SESSION)) session_start();
 //error_reporting(0);
-include("../database.php");
+require_once "../temp/database.php";
 date_default_timezone_set('Africa/lagos');
 if(isset($_SESSION["username"]))
 {
 	$username = $_SESSION["username"];
-	$query = "SELECT * FROM `members` WHERE username = '$username'";
-	$result = mysql_query($query);
+	$query = "SELECT * FROM `members` WHERE email = '$username'";
+	$result = $db_conn->query($query);
 	if(!$result){echo "error in validation";}
-	$row = mysql_fetch_assoc($result);
+	$row = $result->fetch(PDO::FETCH_ASSOC);
 }
 else{
-	header("location: index.php?logoutsession=1212");
+	header("location: ../auth/conduit.php?cid=1212");
 	}
 
 
@@ -63,7 +63,7 @@ else{
                         </li>
 
                         <li class="divider"></li>
-                        <li><a href="../process.php?cid=1212"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="../app/process.php?logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

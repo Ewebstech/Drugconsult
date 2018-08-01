@@ -2,7 +2,7 @@
 $host='localhost';
 $db = 'thm';
 $username = 'root';
-$password = '';
+$password = 'dreammesh';
 
 $dsn = "mysql:host=$host;dbname=$db"; // Data Source Name
 

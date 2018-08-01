@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +17,7 @@
 		 font-weight: bold !important;
 	 }
 	 </style>
-	<?php include("header.html"); ?>
+	<?php include("header.php"); ?>
     
     <?php include("sidebar.php"); ?>
 
@@ -45,7 +44,7 @@
 				  ?>
 						<section>
 							<div class="panel" >
-							 <p class="text-center" style='background: green; color: #fff; padding: 10px;'><span>(<?php echo $_REQUEST["upload"] ?>) Items were uploaded successfully. <br> Your products is currently being processed by the administrators to meet certain standard before publishing.</span></p>
+							 <p class="text-center" style='background: green; color: #fff; padding: 10px;'><span>(<?php echo $_REQUEST["success"] ?>) has been added successfully to the inventory.</span></p>
 							 <center><a href="additems.php" class="btn btn-danger"><i class="fa fa-plus"></i> Add More</a> </center>
 							 <br clear="all" />
 							</div>
@@ -57,9 +56,9 @@
 				 <?php if(!isset($_REQUEST["success"])) { ?>
                 <section class="panel">
                           <header class="panel-heading">
-                             Add New Items
+                             Add New Products
                           </header>
-                          <div class="panel-body">
+                <div class="panel-body">
 			
                 <div class="row">
 					   
@@ -67,79 +66,57 @@
 				<form action="process.php" method="post" class="form-group" ENCTYPE="multipart/form-data">
 				<div class="form-group">
 				<label>Product/Item Title</label>
-				<input type="text" name="itemtitle" class="form-control"/>
+				<input type="text" name="title" class="form-control" />
 				
 				</div>
 				<div class="form-group">
 				<label>Product/Item Category</label>
-				<input type="text" list="maincat" name="itemcategory" class="form-control" placeholder="Item's Category..." />
+				<input type="text" list="maincat" name="category" class="form-control" placeholder="Item's Category..." />
 				<datalist id="maincat">
 				<?php 				
-				$check = mysql_query("select * from items group by itemcategory"); 
-					while($item = mysql_fetch_assoc($check)) {
+				// $query = "select * from products"; 
+				// $where = [
+					
+				// ]
+				// $result = $baseclass->pdoquery($query, $where);
+				// 	while($item = mysql_fetch_assoc($check)) {
 				?>
-				<option value="<?php echo"$item[itemcategory]"; ?>">
-				<?php } ?>
+				<option value="<?php //echo"$item[itemcategory]"; ?>">
+				<?php // } ?>
 				</datalist>
 				</div>
 				
 				<div class="form-group">
-				<label>Standard Price (N)</label>
-				<input type="number" name="standardprice" class="form-control">
-				
-				</div>
-				<div class="form-group">
-				<label>Discounted Price (N)</label>
-				<input type="number" name="discountprice" class="form-control" />
+				<label>Price (N)</label>
+				<input type="number" name="price" class="form-control" />
 				</div>
 				<div class="form-group">
 				<label>Quantity for Sale</label>
 				<input type="number" name="quantity" class="form-control"/>
 				</div>
-				<div class="form-group">
-				<label>No of Star Review</label>
-				<select class="form-control" name="reviewstar">
-				<option value="">Choose Figure</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
 				
-				</select>
-				</div>
 			
 				<div class="form-group">
-				<label>Product Description</label>
-				<textarea name="description" class="form-control" value="<?php $_POST["remark"]; ?>" placeholder="Give a description for this product"></textarea>
-				</div>
-				<div class="form-group">
 				<label>Shipping Information</label>
-				<textarea name="shipping" class="form-control" value="<?php $_POST["remark"]; ?>" placeholder="Please, provide shipping information about this product"></textarea>
+				<textarea name="shipping" class="form-control" placeholder="Please, provide shipping information about this product"></textarea>
 				</div>
 				
-				<div class="form-group">
-				<label>Sale End Day</label>
-				<input type="date" name="saleenddate" class="form-control"/>
-				</div>
-				<div class="form-group">
-				<label>Upload Product/Item Images</label>
-				<input type='file' multiple name='images[]' value='select file'>
-				</div>
 				
 				<div class="form-group">
-				<input type="submit" class="btn btn-primary" name="additem" value="Submit Product for Processing" />
+				<input type="submit" class="btn btn-primary" name="additem" value="Publish Product" />
 				</div>
 			  </form>
 		  </div>
 		  </div>
 		 </div> <!---/panel -->
                           
-						  </div>
+						  
                       </section>
 				 <?php } ?>
+
                   </div>
-              </div>
+			  </div>
+			  
               <!-- page end-->
           </section>
       </section>
