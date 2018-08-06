@@ -40,39 +40,48 @@
           <div id="shopify-section-1528178950362" class="shopify-section index-section col-lg-3 bsell hidden-md hidden-sm hidden-xs">
             <div data-section-id="1528178950362" data-section-type="bestseller" class="bestseller">
               <h1 class="lefthead" style="color:#fff; background: #156322;">
-                bestseller
+                B.P. Drugs
               </h1>
 
               <div class="allbgc">
 
                 <ul class="owl-best">
+                <?php
+                $CAT = $queryclass->displayItems('B.P. DRUGS');
+                
+                foreach($CAT as $item){
+                  
+                  $imagelink = $queryclass->getImage($item['category']);
+                  $href = "products_view.php?".$item['id']."";
+                ?>
 
                   <li class="leftpro item-row   " id="product-741690441780">
                     <div class="product-container col-xs-12">
 
                       <div class="imgblock col-xs-4">
-
-                        <a href="products/new-collection-t-shirt.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/3_largeb120.jpg?v=1528965461"
-                            alt="Sed magna nunc, ornare convallis sem at pulvinar hendrerit" />
+                        <center>
+                        <a href="<?php echo $href ?>">
+                          <img class="" src="<?php echo $imagelink ?>"
+                             style="max-height: 50px;" />
+                        </center>
                         </a>
-                        <a href="products/new-collection-t-shirt.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/26_large36a6.jpg?v=1528965474" class="second-img featured-image"
-                            alt="Sed magna nunc, ornare convallis sem at pulvinar hendrerit"> </a>
+                        <a href="<?php echo $href ?>">
+                          <img src="imgfiles/cartout.jpg"  style="max-height: 50px;" class="second-img featured-image"
+                            > </a>
 
                       </div>
 
                       <div class="wbproductdes col-xs-8">
                         <div class="shopify-product-reviews-badge" data-id="741690441780"></div>
                         <h5>
-                          <a href="collections/bestseller/products/new-collection-t-shirt.html" class="grid-link__title">Sed magna nunc, ornare convallis sem at pulvinar hendrerit</a>
+                          <a href="<?php echo $href ?>" class="grid-link__title"><?php echo $item['product'] ?></a>
                         </h5>
                         <div class="product_price">
 
                           <span>
                             <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="50000"
                               style="display:none !important;"></span>
-                            <span class=money>$500.00</span>
+                            <span class=money>&#8358 <?php echo $item['price'] ?>.00</span>
                           </span>
 
                         </div>
@@ -82,379 +91,7 @@
 
                     </div>
                   </li>
-
-                  <li class="leftpro item-row    on-sale" id="product-747392958516">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/fashionable-new-design-shirt.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/4_14234531-17c7-4dc4-82a5-6d742001dd9e_large4c1b.jpg?v=1528966524"
-                            alt="Nam sagittis nibh risus sit amet feugiat tortor posuere" />
-                        </a>
-                        <a href="products/fashionable-new-design-shirt.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/7_1791bc67-529a-4256-b37b-336d32b77001_largea873.jpg?v=1528966531"
-                            class="second-img featured-image" alt="Nam sagittis nibh risus sit amet feugiat tortor posuere"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="747392958516"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/fashionable-new-design-shirt.html" class="grid-link__title">Nam sagittis nibh risus sit amet feugiat tortor posuere</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="60000"
-                              style="display:none !important;"></span>
-                            <span class=money>$600.00</span>
-                          </span>
-                          <span class="dis-price">
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1"
-                              data-override-value="119900" style="display:none !important;"></span>
-                            <span class=money>$1,199.00</span>
-                          </span>
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-                  <li class="leftpro item-row    on-sale" id="product-741731205172">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/new-latest-collection-product.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/10_2efd9ba9-4e50-469a-8af6-dcc73101e0eb_large0d60.jpg?v=1528966759"
-                            alt="Nunc posuere erat ligula quis eleifend sem dignissim vitae" />
-                        </a>
-                        <a href="products/new-latest-collection-product.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/9_888366fa-b5df-404a-8d4c-81b4da22db01_large285b.jpg?v=1528966775"
-                            class="second-img featured-image" alt="Nunc posuere erat ligula quis eleifend sem dignissim vitae"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="741731205172"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/new-latest-collection-product.html" class="grid-link__title">Nunc posuere erat ligula quis eleifend sem dignissim vitae</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="12000"
-                              style="display:none !important;"></span>
-                            <span class=money>$120.00</span>
-                          </span>
-                          <span class="dis-price">
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1"
-                              data-override-value="39900" style="display:none !important;"></span>
-                            <span class=money>$399.00</span>
-                          </span>
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-                  <li class="leftpro item-row    on-sale" id="product-1046200582196">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/vitae-ultrices-quam-elit-non-justo.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/9_d9c2c91d-e8ec-4f69-b642-3d05bf50ef04_large51d6.jpg?v=1528968559"
-                            alt="vitae ultrices quam elit non justo" />
-                        </a>
-                        <a href="products/vitae-ultrices-quam-elit-non-justo.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/10_eca1e784-599a-4587-9985-d4578ed1481a_largeac5d.jpg?v=1528968567"
-                            class="second-img featured-image" alt="vitae ultrices quam elit non justo"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="1046200582196"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/vitae-ultrices-quam-elit-non-justo.html" class="grid-link__title">vitae ultrices quam elit non justo</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="10000"
-                              style="display:none !important;"></span>
-                            <span class=money>$100.00</span>
-                          </span>
-                          <span class="dis-price">
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1"
-                              data-override-value="30000" style="display:none !important;"></span>
-                            <span class=money>$300.00</span>
-                          </span>
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-                  <li class="leftpro item-row   " id="product-1046195961908">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/lacus-sem-laoreet-nisl-vel-fringilla-ante-orci-at-felis.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/21_largeadc0.jpg?v=1528968855"
-                            alt="lacus sem laoreet nisl, vel fringilla ante orci at felis" />
-                        </a>
-                        <a href="products/lacus-sem-laoreet-nisl-vel-fringilla-ante-orci-at-felis.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/2_a55285d3-835e-4be7-b121-b4ddee724637_largee71e.jpg?v=1528968868"
-                            class="second-img featured-image" alt="lacus sem laoreet nisl, vel fringilla ante orci at felis"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="1046195961908"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/lacus-sem-laoreet-nisl-vel-fringilla-ante-orci-at-felis.html"
-                            class="grid-link__title">lacus sem laoreet nisl, vel fringilla ante orci at felis</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="45000"
-                              style="display:none !important;"></span>
-                            <span class=money>$450.00</span>
-                          </span>
-
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-                  <li class="leftpro item-row   " id="product-1046185050164">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/vestibulum-a-massa-vivamus-luctus-fermentum.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/12_largec83c.jpg?v=1528968361"
-                            alt="vestibulum a massa. Vivamus luctus fermentum" />
-                        </a>
-                        <a href="products/vestibulum-a-massa-vivamus-luctus-fermentum.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/23_dfe14d37-c544-4c0b-9469-2e0e28e0344d_largefefd.jpg?v=1528968370"
-                            class="second-img featured-image" alt="vestibulum a massa. Vivamus luctus fermentum"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="1046185050164"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/vestibulum-a-massa-vivamus-luctus-fermentum.html" class="grid-link__title">vestibulum a massa. Vivamus luctus fermentum</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="5000"
-                              style="display:none !important;"></span>
-                            <span class=money>$50.00</span>
-                          </span>
-
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-                  <li class="leftpro item-row   " id="product-1046180724788">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/lacinia-pulvinar-non-mauris-suspendisse-sed-nulla-dapibus.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/22_df76dd57-b507-45d0-8f9e-b4794964c000_larged8bf.jpg?v=1528961480"
-                            alt="Suspendisse viverra nibh et pulvinar tempus Aliquam eu metus vulputate, molestie" />
-                        </a>
-                        <a href="products/lacinia-pulvinar-non-mauris-suspendisse-sed-nulla-dapibus.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/17_df1c82c9-b807-42d7-95fb-d7163ccbcb23_large92f5.jpg?v=1528961492"
-                            class="second-img featured-image" alt="Suspendisse viverra nibh et pulvinar tempus Aliquam eu metus vulputate, molestie"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="1046180724788"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/lacinia-pulvinar-non-mauris-suspendisse-sed-nulla-dapibus.html"
-                            class="grid-link__title">Suspendisse viverra nibh et pulvinar tempus Aliquam eu metus vulputate, molestie</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="15000"
-                              style="display:none !important;"></span>
-                            <span class=money>$150.00</span>
-                          </span>
-
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-
-                  <li class="leftpro item-row   " id="product-1046168469556">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/sagittis-aliquet-lacus-dapibus-eu-etiam-malesuada-augue.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/2_large75f1.jpg?v=1528967592"
-                            alt="sagittis aliquet lacus dapibus eu. Etiam malesuada augue" />
-                        </a>
-                        <a href="products/sagittis-aliquet-lacus-dapibus-eu-etiam-malesuada-augue.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/15_cb1628fc-e3fd-4554-9a9c-fe332638a4d0_large4299.jpg?v=1528967624"
-                            class="second-img featured-image" alt="sagittis aliquet lacus dapibus eu. Etiam malesuada augue"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="1046168469556"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/sagittis-aliquet-lacus-dapibus-eu-etiam-malesuada-augue.html"
-                            class="grid-link__title">sagittis aliquet lacus dapibus eu. Etiam malesuada augue</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="30000"
-                              style="display:none !important;"></span>
-                            <span class=money>$300.00</span>
-                          </span>
-
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-
-
-
-
-
-
-
-
-
-
-
-                  <li class="leftpro item-row    on-sale" id="product-747383586868">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/new-sleeve-designer-dress.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/23_large6e30.jpg?v=1528967229"
-                            alt="New Sleeve Designer Dress" />
-                        </a>
-                        <a href="products/new-sleeve-designer-dress.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/5_a7c4eb20-dcd9-4599-af96-2d632e7dc447_large3474.jpg?v=1528967240"
-                            class="second-img featured-image" alt="New Sleeve Designer Dress"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="747383586868"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/new-sleeve-designer-dress.html" class="grid-link__title">New Sleeve Designer Dress</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="99900"
-                              style="display:none !important;"></span>
-                            <span class=money>$999.00</span>
-                          </span>
-                          <span class="dis-price">
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1"
-                              data-override-value="129900" style="display:none !important;"></span>
-                            <span class=money>$1,299.00</span>
-                          </span>
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-
-
-
-
-
-
-
-
-
-
-
-                  <li class="leftpro item-row    on-sale" id="product-741692506164">
-                    <div class="product-container col-xs-12">
-
-                      <div class="imgblock col-xs-4">
-
-                        <a href="products/summer-new-collection.html">
-                          <img class="" src="cdn.shopify.com/s/files/1/0012/3024/1844/products/17_12fe988c-0719-414d-a78d-2eaf487b2fb3_large983f.jpg?v=1528968073"
-                            alt="Fusce gravida lorem a lectus ornare placerat" />
-                        </a>
-                        <a href="products/summer-new-collection.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/products/14_1c525395-2cf8-4ae6-ac8d-8c6a3b36e3b2_large30a0.jpg?v=1528968080"
-                            class="second-img featured-image" alt="Fusce gravida lorem a lectus ornare placerat"> </a>
-
-                      </div>
-
-                      <div class="wbproductdes col-xs-8">
-                        <div class="shopify-product-reviews-badge" data-id="741692506164"></div>
-                        <h5>
-                          <a href="collections/bestseller/products/summer-new-collection.html" class="grid-link__title">Fusce gravida lorem a lectus ornare placerat</a>
-                        </h5>
-                        <div class="product_price">
-
-                          <span>
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="6000"
-                              style="display:none !important;"></span>
-                            <span class=money>$60.00</span>
-                          </span>
-                          <span class="dis-price">
-                            <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1"
-                              data-override-value="39900" style="display:none !important;"></span>
-                            <span class=money>$399.00</span>
-                          </span>
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                  </li>
-
-
-
+                <?php } ?>
                 </ul>
               </div>
 
@@ -1034,7 +671,7 @@
                 <div class="beffect">
 
 
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/b1f373.jpg?v=1526706183" alt="" />
+                   <img src="imgfiles/banner.jpg" alt="" />
                   <span class="hover">
                     <span class="r1"></span>
                     <span class="r2"></span>
@@ -1046,12 +683,11 @@
                 </div>
               </div>
 
-
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="beffect">
 
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/b2b9f2.jpg?v=1526706188" alt="" />
+                  <img src="imgfiles/banner33454.jpg" alt="" style="max-height: 150px;"/>
+                 
                   <span class="hover">
                     <span class="r1"></span>
                     <span class="r2"></span>
@@ -1067,6 +703,7 @@
             </div>
 
           </div>
+
           <div id="shopify-section-1492424920625" class="shopify-section index-section">
             <div data-section-id="1492424920625" data-section-type="special" class="special">
               <h1 class="heading" style="color:#dd3a2e;">
@@ -1098,7 +735,7 @@
                         </center>
                         </a>
                         <a href="<?php echo $href ?>">
-                            <img src="imgfiles/cartout.jpg" style="max-height: 120px; margin-top: 20px;" class="second-img featured-image" alt=""> </a>
+                            <img src="imgfiles/cartout.jpg" style="max-height: 100px; margin-top: 20px;" class="second-img featured-image" alt=""> </a>
 
                       </div>
 
@@ -1271,10 +908,6 @@
               });
             </script>
 
-
-
-
-
           </div>
           <div id="shopify-section-1528104886496" class="shopify-section index-section">
             <div data-section-id="1528104886496">
@@ -1285,7 +918,7 @@
                 <div class="beffect">
 
 
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/offers-banners0dbf.jpg?v=1524476266" alt="" />
+                  <img src="imgfiles/livelife.png" alt="" />
                   <span class="hover">
                     <span class="r1"></span>
                     <span class="r2"></span>
@@ -1301,317 +934,224 @@
             </div>
 
           </div>
-          <div id="shopify-section-1528183706605" class="shopify-section">
-            <div data-section-id="1528183706605" class="wbblog">
-              <div class="blog-post">
-                <h1 class="heading" style="color:#dd3a2e;">
-                  <span>blog</span>
-                </h1>
-                <div class="allbgc">
-                  <div class="owlblog owl-carousel owl-theme">
-
-                    <div class="articleblog col-xs-12">
-                      <div class="home-blog-image">
-
-                        <a href="blogs/news/where-does-it-come-from.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/articles/1_grande4c2c.jpg?v=1528959302" alt="Where does it come from?"
-                          />
-                        </a>
-
-                      </div>
-
-                      <div class="blogdes">
-                        <div class="blogs-sub-title">
-
-                          <time datetime="2018-04-23">
-                            <span class="date" style="color:#777777">
-                              23, April 2018
-                            </span>
-                          </time>
-
-                          <span class="sep">|</span>
 
 
 
-                          <span class="bcmt" style="color:#777777">2 Comments</span>
+<!----- Vitamins ---->
+<br clear="all" />
+      <div id="shopify-section-1492424920625" class="shopify-section index-section">
+            <div data-section-id="1492424920625" data-section-type="special" class="special">
+              <h1 class="heading" style="color:#dd3a2e;">
+                <span>Vitamins</span>
+              </h1>
+
+              <div class="allbgc">
 
 
 
-                        </div>
-                        <h5>
-                          <a href="blogs/news/where-does-it-come-from.html" style="color:#dd3a2e;">Where does it come from?</a>
-                        </h5>
+                <ul class="owl-spe 1492424920625 owl-carousel owl-theme">
 
-                        <p style="color:#555555;">It is a long established fact that a reader will be distracted by the readabl...</p>
-
-
-
-                        <a style="color:;" href="blogs/news/where-does-it-come-from.html" class="btn">Read more</a>
-
-                      </div>
-                    </div>
-
-                    <div class="articleblog col-xs-12">
-                      <div class="home-blog-image">
-
-                        <a href="blogs/news/section-1-10-33-of-de-finibus-bonorum-et-malorum-written-by-cicero-in-45-bc.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/articles/2_grandeb34c.jpg?v=1528959332" alt="Section 1.10.33 of " de
-                            Finibus Bonorum et Malorum ", written by Cicero in 45 BC" />
-                        </a>
-
-                      </div>
-
-                      <div class="blogdes">
-                        <div class="blogs-sub-title">
-
-                          <time datetime="2018-04-17">
-                            <span class="date" style="color:#777777">
-                              17, April 2018
-                            </span>
-                          </time>
-
-                          <span class="sep">|</span>
-
-
-
-                          <span class="bcmt" style="color:#777777">0 Comments</span>
-
-
-
-                        </div>
-                        <h5>
-                          <a href="blogs/news/section-1-10-33-of-de-finibus-bonorum-et-malorum-written-by-cicero-in-45-bc.html"
-                            style="color:#dd3a2e;">Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</a>
-                        </h5>
-
-                        <p style="color:#555555;">But I must explain to you how all this mistaken idea of denouncing pleasure a...</p>
-
-
-
-                        <a style="color:;" href="blogs/news/section-1-10-33-of-de-finibus-bonorum-et-malorum-written-by-cicero-in-45-bc.html" class="btn">Read more</a>
-
-                      </div>
-                    </div>
-
-                    <div class="articleblog col-xs-12">
-                      <div class="home-blog-image">
-
-                        <a href="blogs/news/finibus-bonorum-et-malorum-written-by-cicero-in-45-bc.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/articles/7_grande2093.jpg?v=1528959357" alt="Finibus Bonorum et Malorum"
-                            , written by Cicero in 45 BC " />
-              </a>
-              
-            </div>
-              
-              <div class="blogdes ">
-                <div class="blogs-sub-title ">
-                   
-                  <time datetime="2018-04-17 ">
-                    <span class="date " style="color:#777777 ">
-                      17, April 2018 
-                    </span>
-                  </time>        
+                <?php
+                $CAT = $queryclass->displayItems('VITAMINS');
+                
+                foreach($CAT as $item){
                   
-                <span class="sep ">|</span>
-                
-                
-                
-                  <span class="bcmt " style="color:#777777 ">0 Comments</span>
-                
-                
-               
-              </div>
-                <h5><a href="blogs/news/finibus-bonorum-et-malorum-written-by-cicero-in-45-bc.html " style="color:#dd3a2e;
-                            ">Finibus Bonorum et Malorum", written by Cicero in 45 BC</a>
+                  $imagelink = $queryclass->getImage($item['category']);
+                  $href = "products_view.php?".$item['id']."";
+                ?>
+                  <div class="item-row    on-sale" id="product-747392958516">
+                    <div class="product-container">
+
+                      <div class="imgblock">
+
+                        <a href="<?php echo $href ?>">
+                        <center>
+                              <img class="" src="<?php echo $imagelink ?>" class="featured-image" alt="" style="max-height: 150px; align: center;" />
+                        </center>
+                        </a>
+                        <a href="<?php echo $href ?>">
+                            <img src="imgfiles/cartout.jpg" style="max-height: 100px; margin-top: 20px;" class="second-img featured-image" alt=""> </a>
+
+                      </div>
+
+                      <div class="wbproductdes text-center">
+                        <div class="btnh">
+                          <div class="shopify-product-reviews-badge" data-id="747392958516"></div>
+                          <h5>
+                            <a href="<?php echo $href ?>" class="grid-link__title"><?php echo $item['product'] ?></a>
                           </h5>
+                          <div class="product_price">
 
-                          <p style="color:#555555;">But I must explain to you how all this mistaken idea of denouncing pleasure a...</p>
-
-
-
-                          <a style="color:;" href="blogs/news/finibus-bonorum-et-malorum-written-by-cicero-in-45-bc.html" class="btn">Read more</a>
-
-                      </div>
-                    </div>
-
-                    <div class="articleblog col-xs-12">
-                      <div class="home-blog-image">
-
-                        <a href="blogs/news/the-standard-lorem-ipsum-passage-used-since-the-1500s.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/articles/3_grandeac51.jpg?v=1528959383" alt="The standard Lorem Ipsum passage, used since the 1500s"
-                          />
-                        </a>
-
-                      </div>
-
-                      <div class="blogdes">
-                        <div class="blogs-sub-title">
-
-                          <time datetime="2018-04-17">
-                            <span class="date" style="color:#777777">
-                              17, April 2018
+                            <div class="grid-link__org_price">
+                              <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_price" data-override-value-set="1" data-override-value="60000" style="display:none !important;"></span>
+                              <span class=money>&#8358 <?php echo $item['price'] ?>.00</span>
+                            </div>
+                            <span class="dis-price">
+                              <span class="Bold-theme-hook-DO-NOT-DELETE bold_product_compare_price" data-override-value-set="1"
+                                data-override-value="119900" style="display:none !important;"></span>
+                             
                             </span>
-                          </time>
 
-                          <span class="sep">|</span>
+                          </div>
+
+                          <p class="thumbdes"></p>
+                        </div>
+
+
+                        <div class="button-group">
+
+                          <div class=" addcart">
+
+                            <form action="#" method="post" class="variants clearfix" id="cart-form-747392958516">
+                              <input type="hidden" name="id" value="7661026803764" />
+                              <a class="add-cart-btn btn">
+                                <svg aria-hidden="true" focusable="false" role="presentation" class="icon iconcartp" viewBox="0 0 459.529 459.529">
+                                  <path d="M17,55.231h48.733l69.417,251.033c1.983,7.367,8.783,12.467,16.433,12.467h213.35c6.8,0,12.75-3.967,15.583-10.2
+      l77.633-178.5c2.267-5.383,1.7-11.333-1.417-16.15c-3.117-4.817-8.5-7.65-14.167-7.65H206.833c-9.35,0-17,7.65-17,17
+      s7.65,17,17,17H416.5l-62.9,144.5H164.333L94.917,33.698c-1.983-7.367-8.783-12.467-16.433-12.467H17c-9.35,0-17,7.65-17,17
+      S7.65,55.231,17,55.231z"></path>
+                                  <path d="M135.433,438.298c21.25,0,38.533-17.283,38.533-38.533s-17.283-38.533-38.533-38.533S96.9,378.514,96.9,399.764
+      S114.183,438.298,135.433,438.298z"></path>
+                                  <path d="M376.267,438.298c0.85,0,1.983,0,2.833,0c10.2-0.85,19.55-5.383,26.35-13.317c6.8-7.65,9.917-17.567,9.35-28.05
+      c-1.417-20.967-19.833-37.117-41.083-35.7c-21.25,1.417-37.117,20.117-35.7,41.083
+      C339.433,422.431,356.15,438.298,376.267,438.298z"></path>
+                                </svg>
+                                <span class="hidden-xs">add to cart</span>
+                              </a>
+                            </form>
+
+                          </div>
 
 
 
-                          <span class="bcmt" style="color:#777777">1 Comments</span>
+                          <div class="quickv">
+                            <a href="javascript:void(0)" id="fashionable-new-design-shirt" class="quick-view-text">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon iconquick" viewBox="0 0 456.795 456.795" style="width: 18px; height: 17px;">
+                                <path d="M448.947,218.475c-0.922-1.168-23.055-28.933-61-56.81c-50.705-37.253-105.877-56.944-159.551-56.944
+      c-53.672,0-108.844,19.691-159.551,56.944c-37.944,27.876-60.077,55.642-61,56.81L0,228.397l7.846,9.923
+      c0.923,1.168,23.056,28.934,61,56.811c50.707,37.252,105.879,56.943,159.551,56.943c53.673,0,108.845-19.691,159.55-56.943
+      c37.945-27.877,60.078-55.643,61-56.811l7.848-9.923L448.947,218.475z M228.396,315.039c-47.774,0-86.642-38.867-86.642-86.642
+      c0-7.485,0.954-14.751,2.747-21.684l-19.781-3.329c-1.938,8.025-2.966,16.401-2.966,25.013c0,30.86,13.182,58.696,34.204,78.187
+      c-27.061-9.996-50.072-24.023-67.439-36.709c-21.516-15.715-37.641-31.609-46.834-41.478c9.197-9.872,25.32-25.764,46.834-41.478
+      c17.367-12.686,40.379-26.713,67.439-36.71l13.27,14.958c15.498-14.512,36.312-23.412,59.168-23.412
+      c47.774,0,86.641,38.867,86.641,86.642C315.037,276.172,276.17,315.039,228.396,315.039z M368.273,269.875
+      c-17.369,12.686-40.379,26.713-67.439,36.709c21.021-19.49,34.203-47.326,34.203-78.188s-13.182-58.697-34.203-78.188
+      c27.061,9.997,50.07,24.024,67.439,36.71c21.516,15.715,37.641,31.609,46.834,41.477
+      C405.91,238.269,389.787,254.162,368.273,269.875z"></path>
+                                <path d="M173.261,211.555c-1.626,5.329-2.507,10.982-2.507,16.843c0,31.834,25.807,57.642,57.642,57.642
+      c31.834,0,57.641-25.807,57.641-57.642s-25.807-57.642-57.641-57.642c-15.506,0-29.571,6.134-39.932,16.094l28.432,32.048
+      L173.261,211.555z"></path>
+                              </svg>
+                              <span class="hidden-xs">quickview</span>
+                            </a>
+                          </div>
 
+
+
+                          <div class="add-to-wishlist">
+                            <div class="show">
+                              <div class="default-wishbutton-fashionable-new-design-shirt loading">
+                                <a class="add-in-wishlist-js" href="f#">
+                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon iconwish" viewBox="0 0 67.949 67.949" style="width: 18px; height: 17px;">
+                                    <path d="M62.49,11.239c-7.39-7.388-19.412-7.388-26.8,0l-1.716,1.715l-1.715-1.715c-7.388-7.389-19.411-7.389-26.799,0
+    c-7.238,7.238-7.285,18.711-0.109,26.688c6.545,7.273,25.848,22.986,26.667,23.651c0.556,0.452,1.225,0.672,1.89,0.672
+    c0.022,0,0.044,0,0.065-0.001c0.688,0.032,1.381-0.204,1.955-0.671c0.819-0.665,20.124-16.378,26.671-23.652
+    C69.774,29.95,69.727,18.477,62.49,11.239z M58.139,33.913c-5.103,5.669-19.13,17.361-24.166,21.51
+    c-5.036-4.148-19.06-15.839-24.162-21.509C4.805,28.35,4.758,20.426,9.702,15.482c2.525-2.524,5.841-3.787,9.157-3.787
+    s6.632,1.262,9.157,3.787l3.772,3.772c0.449,0.449,1.015,0.717,1.609,0.811c0.964,0.207,2.01-0.062,2.76-0.81l3.774-3.773
+    c5.051-5.049,13.267-5.048,18.315,0C63.19,20.426,63.143,28.35,58.139,33.913z"></path>
+                                  </svg>
+                                  <span class="tooltip-label hidden-xs">Wishlist</span>
+                                </a>
+                              </div>
+                              <div class="loadding-wishbutton-fashionable-new-design-shirt loading" style="display: none; pointer-events: none">
+                                <a class="add_to_wishlist" href="#">
+                                  <i class="fa fa-circle-o-notch fa-spin"></i>
+                                </a>
+                              </div>
+                              <div class="added-wishbutton-fashionable-new-design-shirt loading" style="display: none;">
+                                <a class="added-wishlist add_to_wishlist" href="#">
+                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon iconwish" viewBox="0 0 176.104 176.104" style="width: 18px; height: 17px;">
+                                    <path d="M150.383,18.301c-7.13-3.928-15.308-6.187-24.033-6.187c-15.394,0-29.18,7.015-38.283,18.015
+			c-9.146-11-22.919-18.015-38.334-18.015c-8.704,0-16.867,2.259-24.013,6.187C10.388,26.792,0,43.117,0,61.878
+			C0,67.249,0.874,72.4,2.457,77.219c8.537,38.374,85.61,86.771,85.61,86.771s77.022-48.396,85.571-86.771
+			c1.583-4.819,2.466-9.977,2.466-15.341C176.104,43.124,165.716,26.804,150.383,18.301z" />
+                                  </svg>
+                                  <span class="tooltip-label hidden-xs">View Wishlist</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
 
 
                         </div>
-                        <h5>
-                          <a href="blogs/news/the-standard-lorem-ipsum-passage-used-since-the-1500s.html" style="color:#dd3a2e;">The standard Lorem Ipsum passage, used since the 1500s</a>
-                        </h5>
-
-                        <p style="color:#555555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo...</p>
-
-
-
-                        <a style="color:;" href="blogs/news/the-standard-lorem-ipsum-passage-used-since-the-1500s.html" class="btn">Read more</a>
 
                       </div>
+                      <a href="">
+
+
+                        <span class="sale">Sale</span>
+
+
+
+                      </a>
                     </div>
-
-                    <div class="articleblog col-xs-12">
-                      <div class="home-blog-image">
-
-                        <a href="blogs/news/new-blog-data-1.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/articles/5_grande06e8.jpg?v=1528959403" alt="Latest Blog Data" />
-                        </a>
-
-                      </div>
-
-                      <div class="blogdes">
-                        <div class="blogs-sub-title">
-
-                          <time datetime="2018-03-24">
-                            <span class="date" style="color:#777777">
-                              24, March 2018
-                            </span>
-                          </time>
-
-                          <span class="sep">|</span>
-
-
-
-                          <span class="bcmt" style="color:#777777">0 Comments</span>
-
-
-
-                        </div>
-                        <h5>
-                          <a href="blogs/news/new-blog-data-1.html" style="color:#dd3a2e;">Latest Blog Data</a>
-                        </h5>
-
-                        <p style="color:#555555;">here are many variations of passages of Lorem Ipsum available, but the majori...</p>
-
-
-
-                        <a style="color:;" href="blogs/news/new-blog-data-1.html" class="btn">Read more</a>
-
-                      </div>
-                    </div>
-
-                    <div class="articleblog col-xs-12">
-                      <div class="home-blog-image">
-
-                        <a href="blogs/news/new-blog-data.html">
-                          <img src="cdn.shopify.com/s/files/1/0012/3024/1844/articles/4_grandec335.jpg?v=1528959440" alt="Vestibulum faucibus vel nibh eget efficitur Integer dictum neque"
-                          />
-                        </a>
-
-                      </div>
-
-                      <div class="blogdes">
-                        <div class="blogs-sub-title">
-
-                          <time datetime="2018-03-24">
-                            <span class="date" style="color:#777777">
-                              24, March 2018
-                            </span>
-                          </time>
-
-                          <span class="sep">|</span>
-
-
-
-                          <span class="bcmt" style="color:#777777">0 Comments</span>
-
-
-
-                        </div>
-                        <h5>
-                          <a href="blogs/news/new-blog-data.html" style="color:#dd3a2e;">Vestibulum faucibus vel nibh eget efficitur Integer dictum neque</a>
-                        </h5>
-
-                        <p style="color:#555555;">here are many variations of passages of Lorem Ipsum available, but the majori...</p>
-
-
-
-                        <a style="color:;" href="blogs/news/new-blog-data.html" class="btn">Read more</a>
-
-                      </div>
-                    </div>
-
                   </div>
-                  <div class="blogslide slidebtn">
-                    <a class="prev">
-                      <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </a>
-                    <a class="next">
-                      <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </a>
-                  </div>
+
+  <?php  } ?>
+                  
+
+                 
+
+
+                </ul>
+                <div class="owl-spebtn slidebtn">
+                  <a class="prev">
+                    <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="next">
+                    <i class="fa fa-angle-right"></i>
+                  </a>
                 </div>
-                <script type="text/javascript">
-                  $(document).ready(function () {
-
-                    var articleblog = $(".owlblog");
-                    articleblog.owlCarousel({
-                      itemsCustom: [
-                        [0, 1],
-                        [600, 2],
-                        [768, 1],
-                        [992, 3],
-                        [1200, 3]
-                      ],
-                      navigation: false,
-                      pagination: false
-                    });
-                    // Custom Navigation Events
-                    $(".blogslide .next").click(function () {
-                      articleblog.trigger('owl.next');
-                    })
-                    $(".blogslide .prev").click(function () {
-                      articleblog.trigger('owl.prev');
-                    })
-                  });
-                </script>
-                <style>
-                  .wbblog .blogdes h5 a:hover {
-                    color: ;
-                  }
-
-                  .wbblog .blogdes .blog-btn a:hover {
-                    color: ;
-                  }
-
-                  .wbblog .blogdes .bcmt {
-                    color: #777777;
-                  }
-                </style>
               </div>
+
             </div>
 
+            <script type="text/javascript">
+              $(document).ready(function () {
+                var article_item = $(".owl-spe.1492424920625");
+                article_item.owlCarousel({
+                  itemsCustom: [
+                    [0, 1],
+                    [375, 2],
+                    [600, 3],
+                    [768, 2],
+                    [992, 3],
+                    [1200, 4]
+                  ],
+                  navigation: false,
+                  pagination: false
+                });
 
+                // Custom Navigation Events
+                $(".owl-spebtn .next").click(function () {
+                  article_item.trigger('owl.next');
+                })
+                $(".owl-spebtn .prev").click(function () {
+                  article_item.trigger('owl.prev');
+                })
+              });
+            </script>
 
           </div>
-          <!-- END content_for_index -->
 
         </div>
+
+<!----- /Vitamins ---->
+
+
+        </div>
+
 
         <div id="shopify-section-logo-bar" class="shopify-section index-section">
           <div class="col-xs-12 logoslide">

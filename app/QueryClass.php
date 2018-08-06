@@ -30,7 +30,7 @@ class QueryClass extends Baseclass{
         return ($products) ? $products : $this->errors;
     }
 
-    private function getAllCategories(){
+    public function getAllCategories(){
 
         $query = "SELECT category FROM `products`";
         $extra_query = "GROUP BY category";
@@ -56,7 +56,7 @@ class QueryClass extends Baseclass{
                 $image = '../imgfiles/antibiotics.png';
                 break;
             case 'COUGH/COLD':
-                $image = '../imgfiles/analgesics.jpg';
+                $image = '../imgfiles/syrups.jpg';
                 break;
             case 'GENERAL':
                 $image = '../imgfiles/general.jpeg';
