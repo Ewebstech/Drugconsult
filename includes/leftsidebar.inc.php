@@ -35,7 +35,7 @@
                 foreach($CAT as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
                   <li class="leftpro item-row    on-sale" id="product-747392958516">
                     <div class="product-container col-xs-12">
@@ -169,7 +169,7 @@
                 foreach($CAT as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
 
                   <li class="leftpro item-row on-sale" id="product-747392958516">

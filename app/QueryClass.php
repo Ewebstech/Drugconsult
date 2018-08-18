@@ -16,9 +16,36 @@ class QueryClass extends Baseclass{
         $this->base = new Baseclass();
     }
 
+    public function displayProductsById($id){
+        $query = "SELECT * FROM `products`";
+        $where = [
+            'id' => $id
+        ];
+        try{
+            $products = $this->base->pdoquery($query,$fetch="",$extra_query="",$where);
+        }catch(Exception $e){
+            $this->errors = $e->getMessage();
+        }
+        return ($products) ? $products : $this->errors;
+    }
+
     public function displayItems($category){
         $query = "SELECT * FROM `products`";
         $extra_query = "GROUP BY product ORDER BY time desc";
+        $where = [
+            'category' => $category
+        ];
+        try{
+            $products = $this->base->pdoquery($query,$fetch="all",$extra_query,$where);
+        }catch(Exception $e){
+            $this->errors = $e->getMessage();
+        }
+        return ($products) ? $products : $this->errors;
+    }
+
+    public function relatedItems($category){
+        $query = "SELECT * FROM `products`";
+        $extra_query = "GROUP BY product ORDER BY time asc";
         $where = [
             'category' => $category
         ];

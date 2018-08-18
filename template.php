@@ -6,7 +6,8 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <!-- /Added by HTTrack -->
 <meta http-equiv="refresh" content="10">
-
+ <!-- Custom CSS -->
+ <link href="sidebar.css" rel="stylesheet">
 <head>
     <!-- Basic page needs ================================================== -->
     <meta charset="utf-8">
@@ -17,7 +18,7 @@
     <title>
         Drug Consult Pharmacy
     </title>
-
+    <?php require_once __DIR__ . '/includes/sidebar_cart.inc.php'; ?>
     <?php require_once __DIR__ . '/includes/header.inc.php'; ?>
     <!-- Navigation Menu Starts -->
 
@@ -27,6 +28,7 @@
     <main class="main-content">
         <div class="container">
             <div class="row">
+                
                 <nav class="breadcrumb" aria-label="breadcrumbs">
 
                     <a href="index.php" title="Back to the frontpage">Home</a>
@@ -35,13 +37,22 @@
 
 
                 </nav>
+                
                 <?php require_once __DIR__ .'/includes/leftsidebar.inc.php'; ?>
 <!-- Begincontent_for_pages -->
+                
                 <div class="col-md-9 col-sm-8 col-xs-12 rightw">
-
+                    
                     <div class="contback">
                             ...Place content here
-
+                            <div class="text-center">
+           
+          
+            <button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
+                Right Sidebar Modal
+            </button>
+ 
+        </div>
                     </div>
 
                 </div>
@@ -53,6 +64,7 @@
     </main>
 
     <?php require_once __DIR__ . '/includes/footer.inc.php' ?>
+    
 
 
     </body>

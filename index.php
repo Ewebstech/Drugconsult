@@ -52,7 +52,7 @@
                 foreach($CAT as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
 
                   <li class="leftpro item-row   " id="product-741690441780">
@@ -147,7 +147,7 @@
                 foreach($products as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
                     <div class="item-row" id="product-649437413428">
                         <div class="product-container">
@@ -458,7 +458,7 @@
                 foreach($analgesics as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
                       <div class="item-row   " id="product-1046195961908">
                         <div class="product-container">
@@ -722,7 +722,7 @@
                 foreach($analgesics as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
                   <div class="item-row    on-sale" id="product-747392958516">
                     <div class="product-container">
@@ -957,7 +957,7 @@
                 foreach($CAT as $item){
                   
                   $imagelink = $queryclass->getImage($item['category']);
-                  $href = "products_view.php?".$item['id']."";
+                  $href = "products_view.php?variant=".$item['id']."";
                 ?>
                   <div class="item-row    on-sale" id="product-747392958516">
                     <div class="product-container">
@@ -1145,158 +1145,8 @@
 
           </div>
 
-        </div>
 
 <!----- /Vitamins ---->
-
-
-        </div>
-
-
-        <div id="shopify-section-logo-bar" class="shopify-section index-section">
-          <div class="col-xs-12 logoslide">
-
-            <h1 class="heading" style="color:#dd3a2e;">
-              <span>Logo list</span>
-            </h1>
-
-            <div class="allbgc">
-
-              <ul class="logo-bar owl-theme owl-carousel" id="logo-slider">
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-1_225x150%402x7bff.jpg?v=1528957551" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-2_225x150%402x7cf4.jpg?v=1528957568" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-3_225x150%402xf300.jpg?v=1528957577" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-4_225x150%402xa197.jpg?v=1528957587" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-5_225x150%402x178c.jpg?v=1528957597" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-6_225x150%402x58a1.jpg?v=1528957607" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-7_225x150%402x2abd.jpg?v=1528957615" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-8_225x150%402x0173.jpg?v=1528957625" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-9_225x150%402x5091.jpg?v=1528957637" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-                <li class="col-xs-12 logo-bar__item">
-
-
-                  <img src="cdn.shopify.com/s/files/1/0012/3024/1844/files/menufacture-10_225x150%402xb609.jpg?v=1528957647" alt="" class="logo-bar__image"
-                  />
-
-
-                </li>
-
-              </ul>
-              <div class="owl-logobtn slidebtn">
-                <a class="prev">
-                  <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="next">
-                  <i class="fa fa-angle-right"></i>
-                </a>
-              </div>
-
-            </div>
-
-          </div>
-
-          <script type="text/javascript">
-            $(document).ready(function () {
-              var article_item = $("#logo-slider");
-              article_item.owlCarousel({
-                itemsCustom: [
-                  [0, 1],
-                  [320, 2],
-                  [600, 4],
-                  [768, 5],
-                  [992, 6],
-                  [1200, 7],
-                  [1410, 8]
-                ],
-                navigation: false,
-                pagination: false
-              });
-
-              // Custom Navigation Events
-              $(".owl-logobtn .next").click(function () {
-                article_item.trigger('owl.next');
-              })
-              $(".owl-logobtn .prev").click(function () {
-                article_item.trigger('owl.prev');
-              })
-            });
-          </script>
-
-
-        </div>
 
       </div>
     </div>

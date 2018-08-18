@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="cms-menu">
             <span>
-              <a href="#">
+              <a href="./">
                 <i class="fa fa-home"></i>
               </a>
             </span>

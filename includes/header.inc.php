@@ -63,7 +63,7 @@
   <link href="fonts.googleapis.com/cssa94d.css?family=Karma" rel="stylesheet">
 
   <script src="cdn.shopify.com/s/files/1/0012/3024/1844/t/11/assets/bootstrap.min020a.js?16680006302654876230" type="text/javascript"></script>
-
+  
   <!-- Header hook for plugins ================================================== -->
   <style>
     .shopify-payment-button__button--hidden {

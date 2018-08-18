@@ -980,3 +980,9 @@
 
 <span style="display:none;" class="BOLD-mc-picker-mnt" data-open="up" data-bold-mc-picker-mnt></span>
 </script>
+<script>
+    $(".menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>

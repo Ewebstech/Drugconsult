@@ -43,10 +43,16 @@ class Baseclass{
                 }
                 $cols[] =  $column." VARCHAR (".$varchar.") NOT NULL,";
             endif;
+            // Add json field to table
+            if($column == "json"){
+                $cols[] =  $column." json,";
+            }
             if($column == "PRIMARY"){
                 $cols[]  = "PRIMARY KEY (".$value.")";
             }
+            
         }
+        $column." VARCHAR (".$varchar.") NOT NULL,";
         $table_string = implode(' ', $cols);
         
         try{
@@ -180,7 +186,6 @@ class Baseclass{
         foreach($where as $col => $val){
             $cols[] = $col ." = " .":".$col;
         }
-        
         $where_str = implode(' AND ', $cols);
         $data = $where;
         if($where != NULL){
@@ -249,6 +254,16 @@ class Baseclass{
         }
         else{
             return false;
+        }
+    }
+
+    public function convert2grayscale($im){
+       
+        if($im && imagefilter($im, IMG_FILTER_GRAYSCALE))
+        {
+            return $im;
+
+            //imagepng($im, 'dave.png');
         }
     }
 
