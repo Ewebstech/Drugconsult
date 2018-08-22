@@ -170,26 +170,30 @@
         
           </div>
 
-        <!--<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
+        <form id="FormCart" action="#" method="post"> 
                
-          <div class="singlepro__quantity ">
+          <div class="singlepro__quantity">
             <div class="quantity-box-section">
               <label>Quantity:</label>
               <div class="quantity-box col-sm-2" >
-                <input class="form-control" name="qty" style="border: 1px solid #000;" type="number" value="1" size="5"/> 
+                <input class="form-control" id="qty" name="qty" style="border: 1px solid #000;" type="number" value="1" size="5"/> 
               </div>
             </div>
+            <input type="hidden" id="product_id" name="product_id" value="<?php echo $Product['id']; ?>" />
           </div>
             <button type="submit" data-toggle="modal" data-target="#myModal2" name="add" class="btn btn-demo pull-left procart">
               <span id="AddToCartText">Add to Cart</span>
             </button>
                      
-       <!-- </form> -->
+        </form> 
+        <div id="result"></div>
       </div>
       
       <div class="add-to-wishlist p-pagew">     
 <div class="show">
-  <div class="default-wishbutton-fashionable-new-design-shirt loading"><a class="add-in-wishlist-js btn" href="fashionable-new-design-shirt.html"><span class="tooltip-label">Add to wishlist</span></a></div>
+  <div class="default-wishbutton-fashionable-new-design-shirt loading">
+    <a class="add-in-wishlist-js btn" onclick="AxiosFunc()"><span class="tooltip-label">Add to wishlist</span></a>
+  </div>
  <div class="loadding-wishbutton-fashionable-new-design-shirt loading btn" style="display: none; pointer-events: none"><a class="add_to_wishlist" href="fashionable-new-design-shirt.html"></a></div>
   <div class="added-wishbutton-fashionable-new-design-shirt loading" style="display: none;"><a class="added-wishlist btn add_to_wishlist" href="../pages/wishlist.html"><span class="tooltip-label">View Wishlist</span></a></div>
 </div>
@@ -460,9 +464,25 @@ var addthis_config     = {/*AddThisShopify_config_begins*/pubid:'xa-525fbbd6215b
         </div>
 
     </main>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/qs/dist/qs.js"></script>
+    <script src="asset/myscript.js"></script>
 
     <?php require_once __DIR__ . '/includes/footer.inc.php' ?>
+    
+    <script>
+       
+        import axios from 'axios';
+        var username = 'Ewebstech';
+        axios.get('https://www.google.com')
+        .then(function(response){
+          console.log(response.data); // ex.: { user: 'Your User'}
+          console.log(response.status); // ex.: 200
+        });
+      
+      
 
+    </script>
 
     </body>
 

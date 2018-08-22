@@ -56,6 +56,12 @@ if(isset($_POST["login"])){
     }
 }
 
+if(isset($_REQUEST["addcart"])){
+    echo $_REQUEST['param1'];
+    var_dump($_REQUEST);
+    //var_dump(file_get_contents('php://input'));
+}
+
 if(isset($_REQUEST["logout"])){
 
     if(isset($_SESSION['username'])){
