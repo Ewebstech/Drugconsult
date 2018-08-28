@@ -5,10 +5,12 @@ require_once('Baseclass.php');
 use \App\Classes\SignupProcess as Signup;
 use \App\Classes\Baseclass;
 use \App\Classes\LoginProcess as Login;
+use \App\Classes\Cart;
 
 $SignUp = new Signup();
 $base = new Baseclass();
 $Login = new Login();
+$cart = new Cart;
 
 
 if(isset($_POST["signup"])){
@@ -56,10 +58,32 @@ if(isset($_POST["login"])){
     }
 }
 
+if(isset($_REQUEST['showcart'])){
+  echo $cart->ShowCart();
+}
+
 if(isset($_REQUEST["addcart"])){
-    echo $_REQUEST['param1'];
-    var_dump($_REQUEST);
-    //var_dump(file_get_contents('php://input'));
+
+    $params = [
+        'cartid' => session_id(),
+        'product' => $_REQUEST['product_name'],
+        'product_id' => $_REQUEST['product_id'],
+        'qty' => $_REQUEST['qty'],
+        'time'     => time(),
+        'PRIMARY' => "time"
+    ];
+    $table = 'cart';
+    //Create Table If Not Exists
+    $AddToCart = $cart->addToCart($params, $table);
+   
+    if($AddToCart === true){
+        echo $cart->ShowCart();
+    
+    }
+    else{
+        return "Data not added to cart";
+    }
+
 }
 
 if(isset($_REQUEST["logout"])){

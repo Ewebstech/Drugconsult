@@ -3,7 +3,7 @@
 $host='localhost';
 $db = 'thm';
 $username = 'root';
-$password = 'dreammesh';
+$password = '';
 
 $dsn = "mysql:host=$host;dbname=$db"; // Data Source Name
 

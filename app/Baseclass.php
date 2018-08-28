@@ -1,12 +1,14 @@
 <?php
 namespace App\Classes;
 ob_start();
+error_reporting(0);
 date_default_timezone_set('Africa/Lagos');
 			
 require_once __DIR__ . '/SignupProcess.php';
 require_once __DIR__ . '/LoginProcess.php';
 require_once __DIR__ . '/SendMail.php';
 require_once __DIR__ . '/QueryClass.php';
+require_once __DIR__ . '/Cart.php';
 
 use PDO;
 use PHPMailer\PHPMailer\Exception;

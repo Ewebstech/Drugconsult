@@ -179,14 +179,15 @@
                 <input class="form-control" id="qty" name="qty" style="border: 1px solid #000;" type="number" value="1" size="5"/> 
               </div>
             </div>
+            <input type="hidden" id="product_name" name="product_name" value="<?php echo $Product['product']; ?>" />
             <input type="hidden" id="product_id" name="product_id" value="<?php echo $Product['id']; ?>" />
           </div>
             <button type="submit" data-toggle="modal" data-target="#myModal2" name="add" class="btn btn-demo pull-left procart">
-              <span id="AddToCartText">Add to Cart</span>
+              <span id="CartAdded">Add to Cart</span>
             </button>
                      
         </form> 
-        <div id="result"></div>
+       
       </div>
       
       <div class="add-to-wishlist p-pagew">     
@@ -198,10 +199,6 @@
   <div class="added-wishbutton-fashionable-new-design-shirt loading" style="display: none;"><a class="added-wishlist btn add_to_wishlist" href="../pages/wishlist.html"><span class="tooltip-label">View Wishlist</span></a></div>
 </div>
  </div>
-
-      
-      
-   
      <hr>    
       <div class="share_this_btn">
    <div class="addthis_toolbox addthis_default_style addthis_32x32_style"  >
