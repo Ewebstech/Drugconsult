@@ -1,11 +1,6 @@
 
 <?php       
-$host='localhost';
-$db = 'thm';
-$username = 'root';
-$password = '';
-
-$dsn = "mysql:host=$host;dbname=$db"; // Data Source Name
+require __DIR__ . "/../temp/credentials.php";
 
 
 try{

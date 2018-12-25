@@ -17,7 +17,7 @@ class QueryClass extends Baseclass{
     }
 
     public function displayProductsById($id){
-        $query = "SELECT * FROM `products`";
+        $query = "SELECT `id`,`product`,`category`,`price`,`quantity`,`time`,`status`,'shipping' FROM `products`";
         $where = [
             'id' => $id
         ];
@@ -30,8 +30,8 @@ class QueryClass extends Baseclass{
     }
 
     public function displayItems($category){
-        $query = "SELECT * FROM `products`";
-        $extra_query = "GROUP BY product ORDER BY time desc";
+        $query = "SELECT `id`,`product`,`category`,`price`,`quantity`,`time`,`status`,'shipping' FROM `products`";
+        //$extra_query = "GROUP BY product ORDER BY time desc";
         $where = [
             'category' => $category
         ];
@@ -44,8 +44,8 @@ class QueryClass extends Baseclass{
     }
 
     public function relatedItems($category){
-        $query = "SELECT * FROM `products`";
-        $extra_query = "GROUP BY product ORDER BY time asc";
+        $query = "SELECT id,product,`category`,`price`,`quantity`,`time`,`status`,'shipping' FROM `products`";
+        //$extra_query = "GROUP BY product ORDER BY time asc";
         $where = [
             'category' => $category
         ];
