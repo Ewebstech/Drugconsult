@@ -203,8 +203,10 @@
         type="text/javascript"></script>
     <script src="cdn.shopify.com/s/files/1/0012/3024/1844/t/11/assets/slider-init020a.js?16680006302654876230" type="text/javascript"></script>
 
-
-
+    <script src="../asset/toastr/toastr.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="../node_modules/qs/dist/qs.js"></script>
+    <script src="../asset/myscript.js"></script>
 
     <div class="loading-modal modal">Loading</div>
     <div class="ajax-error-modal modal">
@@ -985,5 +987,23 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+
 </script>
 
+<!-- <script>
+function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+</script> -->

@@ -63,7 +63,6 @@ if(isset($_REQUEST['showcart'])){
 }
 
 if(isset($_REQUEST["addcart"])){
-
     $params = [
         'cartid' => session_id(),
         'product' => $_REQUEST['product_name'],
@@ -78,10 +77,25 @@ if(isset($_REQUEST["addcart"])){
    
     if($AddToCart === true){
         echo $cart->ShowCart();
-    
     }
     else{
         return "Data not added to cart";
+    }
+}
+
+if(isset($_REQUEST['deleteRow'])){
+    $id = $_REQUEST['deleteRow'];
+    // Delete any item in the cart with this id
+    $table = "cart";
+    $where = [
+              'product_id' => $id,
+        ];
+    $sql = "DELETE FROM $table WHERE product_id='$id'";
+    $delete = $base->delete_from_db($table, $where);
+    if(!$delete){
+        echo"error deleting data from cart.!";
+    } else {
+        echo"data deleted successful";
     }
 
 }

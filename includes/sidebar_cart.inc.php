@@ -19,5 +19,21 @@
     </div>
         <!-- /#sidebar-wrapper -->
 
+<script src="../asset/toastr/toastr.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="../node_modules/qs/dist/qs.js"></script>
+    <script src="../asset/myscript.js"></script>
 
+<script>
+	
+function removeElement(elementId,Id){
+  // Removes an element from the document
+ 
+  var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+    var baseurl = "/app/process.php?deleteRow="+ Id;
+    makeRequest(baseurl,Id);
     
+}
+</script>
+

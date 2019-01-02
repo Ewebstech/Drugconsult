@@ -162,8 +162,45 @@ class Baseclass{
         }
 
         return ($this->error) ? $this->error : true;
+    }
 
 
+     /**
+     * Delete from  Database 
+     * Usage: Method expects 3 arguments
+     *       $where = [
+     *           'email' => 'ewebstech@ymail.com',
+     *       ];
+     * 
+     * @param Array $params [Delete Params]
+     * @param [type] $table [DB table to delete from]
+     * @param [type] $where [unique key to perform delete]
+     * @return void
+     */
+    public function delete_from_db($table, $where)
+    {
+      
+        // Where ?
+        foreach($where as $col => $val){
+            $cols[] = $col ." = " .":".$col;
+        }
+       
+        $where_string = implode(' AND ', $cols);
+        
+        //unset($params['PRIMARY']);
+       
+        $data = array_merge($where);
+        //var_dump($data);
+       // die;
+        try{
+            $sql = "DELETE FROM $table WHERE $where_string";
+            $stmt = $this->db_conn->prepare($sql);									 
+            $stmt->execute($data);
+        }catch(PDOException $e){
+            $this->error =  $e->getMessages();
+        }
+
+        return ($this->error) ? $this->error : true;
     }
 
     public function insert(Array $params, $table)

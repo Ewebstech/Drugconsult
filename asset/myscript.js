@@ -1,3 +1,22 @@
+//Toastr Options
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  
 $("#FormCart").submit(function(e){
     e.preventDefault();
     // Performing a POST request
@@ -10,7 +29,7 @@ $("#FormCart").submit(function(e){
 
     })
 
-
+   
     /**
      * Axios Function for sending post requests
      */
@@ -31,6 +50,23 @@ $("#FormCart").submit(function(e){
             container.html(
                 '<h6 class="text-center text-danger"> Error Posting Data</h6>'
               ) 
+        });
+    } 
+
+    /**
+     * Axios Function for sending post requests
+     */
+    function makeRequest(baseurl, param){
+        axios.post(baseurl, 
+            param
+        )    
+        .then(function(response){
+           //container.html(response.data)
+            console.log('saved successfully' + response.data)
+            
+        })
+        .catch(function(response){ 
+            console.log('Error with Request' + response)
         });
     } 
 

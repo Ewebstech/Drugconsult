@@ -45,7 +45,7 @@ class QueryClass extends Baseclass{
 
     public function relatedItems($category){
         $query = "SELECT id,product,`category`,`price`,`quantity`,`time`,`status`,'shipping' FROM `products`";
-        //$extra_query = "GROUP BY product ORDER BY time asc";
+        $extra_query = "GROUP BY id,product,`category`,`price`,`quantity`,`time`,`status`,'shipping' ORDER BY time asc";
         $where = [
             'category' => $category
         ];
